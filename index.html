@@ -1,18 +1,79 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Acasa - Creatie_Minimalistica</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background-color: #fdf6f0;
-      color: #333;
+      box-sizing: border-box;
     }
 
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdf6f0;
+      color: #333;
+      overflow: hidden;
+    }
+
+    /* INTRO ANIMAT */
+    #intro {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #d8a48f;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      animation: fadeOut 1s ease-in-out 1.5s forwards;
+    }
+
+    #intro h1 {
+      font-size: 3em;
+      animation: zoomIn 1s ease-out;
+    }
+
+    @keyframes zoomIn {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    #main-content {
+      display: none;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* HEADER + NAV */
     header {
       background-color: #d8a48f;
       color: white;
@@ -27,6 +88,7 @@
       font-weight: bold;
     }
 
+    /* HERO */
     .hero {
       background-image: url('https://example.com/candles-banner.jpg');
       background-size: cover;
@@ -40,6 +102,7 @@
       text-shadow: 2px 2px 4px #000;
     }
 
+    /* INTRO TEXT */
     .intro {
       max-width: 800px;
       margin: 40px auto;
@@ -70,6 +133,7 @@
       background-color: #c78a74;
     }
 
+    /* PRODUSE */
     .products {
       display: flex;
       flex-wrap: wrap;
@@ -94,6 +158,7 @@
       border-radius: 5px;
     }
 
+    /* FOOTER */
     footer {
       background-color: #d8a48f;
       color: white;
@@ -105,57 +170,85 @@
 </head>
 <body>
 
-  <header>
-    <h1>Creatie_Minimalistica</h1>
-    <nav>
-      <a href="index.html">Acasă</a>
-      <a href="produse.html">Produse</a>
-      <a href="about.html">Despre</a>
-      <a href="contact.html">Contact</a>
-      <a href="comanda.html">Comanda</a>
-    </nav>
-  </header>
-<section class="intro">
-    <h2>Ce facem noi?</h2>
-    <p>Noi facem <strong>Candele Parfumate</strong>, <strong>Recipiente Ceramica</strong>.</p>
-    <p>Pentru a cumpăra, te rugăm să ne dai mesaj la +40 759 523 216 spunând:<br>
-      <em>&lt;Numele produsului&gt;, &lt;Culoarea&gt; și &lt;Cantitatea&gt;</em>
-    </p>
-    <a href="produse.html" class="btn">Vezi produse</a>
-  </section>
-
-
-  <div class="hero">
-    Cele mai cumpărate produse:
+  <!-- INTRO ANIMAT CU SUNET -->
+  <div id="intro">
+    <h1>Bine ai venit la Creatie_Minimalistica</h1>
+    <audio id="intro-sound" autoplay>
+      <source src="data/enter.mp3" type="audio/mpeg">
+      Browserul tău nu suportă redarea audio.
+    </audio>
   </div>
 
-  <section class="products">
-    <div class="product">
-      <h3>Top 1</h3>
-      <img src="data/candela.png" alt="Candela decorativă">
-      <h3>Candela 1</h3>
-      <p>35 RON</p>
-      <a href="candela1.html" class="btn">Vezi produsul</a>
-    </div>
-    <div class="product">
-      <h3>Top 2</h3>
-      <img src="data/candela.png" alt="Vas ceramic">
-      <h3>Candela 2</h3>
-      <p>45 RON</p>
-      <a href="candela2.html" class="btn">Vezi produsul</a>
-    </div>
-    <div class="product">
-      <h3>Top 3</h3>
-      <img src="data/candela.png" alt="Candelă rustică">
-      <h3>Candela 3</h3>
-      <p>38 RON</p>
-      <a href="candela3.html" class="btn">Vezi produsul</a>
-    </div>
-  </section>
+  <!-- CONȚINUT PRINCIPAL -->
+  <div id="main-content">
+    <header>
+      <h1>Creatie_Minimalistica</h1>
+      <nav>
+        <a href="index.html">Acasă</a>
+        <a href="produse.html">Produse</a>
+        <a href="about.html">Despre</a>
+        <a href="contact.html">Contact</a>
+        <a href="comanda.html">Comanda</a>
+      </nav>
+    </header>
 
-  <footer>
-    &copy; 2025 Creatie_Minimalistica | Toate drepturile rezervate
-  </footer>
+    <section class="intro">
+      <h2>Ce facem noi?</h2>
+      <p>Noi facem <strong>Candele Parfumate</strong>, <strong>Recipiente Ceramica</strong>.</p>
+      <p>Pentru a cumpăra, te rugăm să ne dai mesaj la +40 759 523 216 spunând:<br>
+        <em>&lt;Numele produsului&gt;, &lt;Culoarea&gt; și &lt;Cantitatea&gt;</em>
+      </p>
+      <a href="produse.html" class="btn">Vezi produse</a>
+    </section>
 
+    <div class="hero">
+      Cele mai cumpărate produse:
+    </div>
+
+    <section class="products">
+      <div class="product">
+        <h3>Top 1</h3>
+        <img src="data/candela.png" alt="Candela decorativă">
+        <h3>Candela 1</h3>
+        <p>35 RON</p>
+        <a href="candela1.html" class="btn">Vezi produsul</a>
+      </div>
+      <div class="product">
+        <h3>Top 2</h3>
+        <img src="data/candela.png" alt="Vas ceramic">
+        <h3>Candela 2</h3>
+        <p>45 RON</p>
+        <a href="candela2.html" class="btn">Vezi produsul</a>
+      </div>
+      <div class="product">
+        <h3>Top 3</h3>
+        <img src="data/candela.png" alt="Candelă rustică">
+        <h3>Candela 3</h3>
+        <p>38 RON</p>
+        <a href="candela3.html" class="btn">Vezi produsul</a>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2025 Creatie_Minimalistica | Toate drepturile rezervate
+    </footer>
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      const audio = document.getElementById('intro-sound');
+      if (audio) {
+        audio.volume = 0.3;
+        audio.play().catch(() => {
+          console.log("Autoplay blocat de browser.");
+        });
+      }
+
+      setTimeout(() => {
+        document.getElementById('main-content').style.display = 'block';
+        document.body.style.overflow = 'auto';
+      }, 1500);
+    });
+  </script>
 </body>
 </html>
