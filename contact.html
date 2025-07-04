@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Produse - Creatie_Minimalistica</title>
+  <title>Contact - Creatie_Minimalistica</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -24,34 +24,36 @@
       text-decoration: none;
       font-weight: bold;
     }
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 40px 20px;
-    }
-    .product {
-      background-color: white;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      margin: 15px;
+    .contact-section {
+      max-width: 600px;
+      margin: 60px auto;
       padding: 20px;
-      width: 250px;
-      text-align: center;
+      background-color: white;
+      border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
     }
-    .product img {
-      width: 100%;
-      height: auto;
-      border-radius: 5px;
-    }
-    .product h3 {
-      margin: 15px 0 10px;
+    .contact-section h2 {
+      margin-bottom: 20px;
       color: #d8a48f;
     }
-    .product p {
-      font-size: 1rem;
-      margin: 0;
+    .contact-section p {
+      font-size: 1.1rem;
+      margin: 20px 0;
+    }
+    .contact-section a {
+      color: #d8a48f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .contact-section a:hover {
+      text-decoration: underline;
+    }
+    .icon {
+      vertical-align: middle;
+      margin-right: 8px;
+      width: 20px;
+      height: 20px;
     }
     footer {
       background-color: #d8a48f;
@@ -74,27 +76,21 @@
     </nav>
   </header>
 
-  <section class="products">
-    <div class="product">
-      <img src="https://example.com/candela1.jpg" alt="Candela decorativă">
-      <h3>Candelă decorativă</h3>
-      <p>35 RON</p>
-    </div>
-    <div class="product">
-      <img src="https://example.com/ceramica1.jpg" alt="Vas ceramic">
-      <h3>Vas ceramic</h3>
-      <p>45 RON</p>
-    </div>
-    <div class="product">
-      <img src="https://example.com/candela2.jpg" alt="Candelă rustică">
-      <h3>Candelă rustică</h3>
-      <p>38 RON</p>
-    </div>
-    <div class="product">
-      <img src="https://example.com/obiect1.jpg" alt="Obiect minimalist">
-      <h3>Obiect minimalist</h3>
-      <p>50 RON</p>
-    </div>
+  <section class="contact-section">
+    <h2>Contact</h2>
+    <p><strong>Telefon:</strong> +40 759 523 216</p>
+
+    <p>
+      <img src="data/yt20.png" alt="YouTube" class="icon">
+      <strong>YouTube:</strong>
+      <a href="https://www.youtube.com/@creatieminimalistica" target="_blank">@creatieminimalistica</a>
+    </p>
+
+    <p>
+      <img src="data/tt20.png" alt="TikTok" class="icon">
+      <strong>TikTok:</strong>
+      <a href="https://www.tiktok.com/@creatieminimalistica" target="_blank">@creatieminimalistica</a>
+    </p>
   </section>
 
   <footer>
